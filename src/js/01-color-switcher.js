@@ -7,16 +7,16 @@ let isIntervalActive = false;
 let intervalId = 0;
 // *
 startButtonUrl.addEventListener('click', () => {
-  if (!isIntervalActive) {
-    bgColorIntervalSetter();
+  if (isIntervalActive) {
+    return;
   }
+  bgColorIntervalSetter();
 });
 function bgColorIntervalSetter() {
   intervalId = setInterval(() => {
     bodyUrl.style.backgroundColor = getRandomHexColor();
   }, 1000);
   isIntervalActive = true;
-  return intervalId
 }
 // *
 stopButtonUrl.addEventListener('click', onStopButtonBtn);

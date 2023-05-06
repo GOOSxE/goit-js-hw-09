@@ -14,10 +14,12 @@ startButtonUrl.addEventListener('click', () => {
   }
 });
 
-stopButtonUrl.addEventListener('click', () => 
-  clearInterval(intervalId)
-);
+stopButtonUrl.addEventListener('click', onStopButtonBtn);
 
+function onStopButtonBtn() {
+  clearInterval(intervalId);
+  isActive = false;
+}
 // todo // Стилі кнопок
 startButtonUrl.classList.add('body__start-btn');
 stopButtonUrl.classList.add('body__stop-btn');

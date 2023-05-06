@@ -11,7 +11,6 @@ startButtonUrl.addEventListener('click', () => {
       bodyUrl.style.backgroundColor = getRandomHexColor();
     }, 1000);
     isActive = true;
-    return intervalId
   }
 });
 

@@ -14,10 +14,9 @@ startButtonUrl.addEventListener('click', () => {
   }
 });
 
-stopButtonUrl.addEventListener('click', () => {
-  clearInterval(intervalId);
-  isActive = false;
-});
+stopButtonUrl.addEventListener('click', () => 
+  clearInterval(intervalId)
+);
 
 // todo // Стилі кнопок
 startButtonUrl.classList.add('body__start-btn');

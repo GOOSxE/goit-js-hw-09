@@ -3,23 +3,24 @@ const startButtonUrl = document.querySelector('button[data-start]');
 const stopButtonUrl = document.querySelector('button[data-stop]');
 const bodyUrl = document.querySelector('body');
 // ? Посилання
+let isIntervalActive = false;
 
-let isActive = false;
 startButtonUrl.addEventListener('click', () => {
-  if (!isActive) {
-    intervalId = setInterval(() => {
-      bodyUrl.style.backgroundColor = getRandomHexColor();
-    }, 1000);
-    isActive = true;
-    return intervalId
+  if (!isIntervalActive) {
+    bgColorIntervalSetter();
   }
 });
+function bgColorIntervalSetter() {
+  intervalId = setInterval(() => {
+    bodyUrl.style.backgroundColor = getRandomHexColor();
+  }, 1000);
+  isIntervalActive = true;
+}
 
 stopButtonUrl.addEventListener('click', onStopButtonBtn);
-
 function onStopButtonBtn() {
   clearInterval(intervalId);
-  isActive = false;
+  isIntervalActive = false;
 }
 // todo // Стилі кнопок
 startButtonUrl.classList.add('body__start-btn');

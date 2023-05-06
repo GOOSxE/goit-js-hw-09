@@ -10,16 +10,17 @@ startButtonUrl.addEventListener('click', () => {
   if (isIntervalActive) {
     return;
   }
-  bgColorIntervalSetter();
+  onStartButtonClick();
 });
-function bgColorIntervalSetter() {
+
+// *
+stopButtonUrl.addEventListener('click', onStopButtonBtn);
+function onStartButtonClick() {
   intervalId = setInterval(() => {
     bodyUrl.style.backgroundColor = getRandomHexColor();
   }, 1000);
   isIntervalActive = true;
 }
-// *
-stopButtonUrl.addEventListener('click', onStopButtonBtn);
 function onStopButtonBtn() {
   clearInterval(intervalId);
   isIntervalActive = false;

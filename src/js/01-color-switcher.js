@@ -4,7 +4,7 @@ const stopButtonUrl = document.querySelector('button[data-stop]');
 const bodyUrl = document.querySelector('body');
 // ? // Без об'яви зовнішньої змінної на гіт-хаб сторінці
 // ? intervalId буде undefined ;
-let intervalId = 0;
+let intervalId = '';
 
 // ? // Подія і функція, що створює інтервал та додає кнопці атрибут disabled ;
 startButtonUrl.addEventListener('click', () => {

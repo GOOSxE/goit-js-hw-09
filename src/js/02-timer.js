@@ -13,7 +13,7 @@ const urls = {
 };
 StartBtnBlock();
 // *
-let intervalId = 0;
+
 let selectedDate = 0;
 const options = {
   enableTime: true,
@@ -48,7 +48,7 @@ function onCounterStart() {
     return;
   }
   Notify.success('The countdown has begun.');
-  intervalId = setInterval(() => {
+  const intervalId = setInterval(() => {
     let preventTimerResult = selectedDate - new Date().getTime();
     let convertedTimerResult = convertMs(preventTimerResult);
 

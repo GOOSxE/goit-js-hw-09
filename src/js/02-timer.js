@@ -11,7 +11,7 @@ const urls = {
   timerMinutesSpan: document.querySelector('span[data-minutes]'),
   timerSecondsSpan: document.querySelector('span[data-seconds]'),
 };
-StartBtnBlock()
+StartBtnBlock();
 // *
 let intervalId = 0;
 let selectedDate = 0;
@@ -25,7 +25,7 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] <= options.defaultDate) {
       Notify.failure('Please choose a date in the future!');
-      StartBtnBlock()
+      StartBtnBlock();
       return;
     }
     counterStartBtnUrl.removeAttribute('disabled');
@@ -42,7 +42,9 @@ counterStartBtnUrl.addEventListener('click', onCounterStart);
 let isIntervalActive = false;
 function onCounterStart() {
   if (isIntervalActive) {
-    Notify.warning('The countdown has already started! Please, reload the page.');
+    Notify.warning(
+      'The countdown has already started! Please, reload the page.'
+    );
     return;
   }
   Notify.success('The countdown has begun.');
@@ -76,7 +78,7 @@ function addLeadingZero(value) {
 }
 // ? Додає атрибут disabled
 function StartBtnBlock() {
-    counterStartBtnUrl.setAttribute('disabled', 'true');
+  counterStartBtnUrl.setAttribute('disabled', 'true');
 }
 // * // Функція що рахує різницю (із тз)
 function convertMs(ms) {

@@ -11,7 +11,7 @@ const urls = {
 // ? // Додаю слухач, та функцію onFormSubmit;
 inputFormUrl.addEventListener('submit', onFormSubmit);
 
-// ? // 
+// ? //
 function onFormSubmit(event) {
   event.preventDefault();
 

@@ -1,34 +1,33 @@
-// *
+// ? // Посилання ;
 const startButtonUrl = document.querySelector('button[data-start]');
 const stopButtonUrl = document.querySelector('button[data-stop]');
 const bodyUrl = document.querySelector('body');
-// ? Посилання
-let isIntervalActive = false;
+// ? // Без об'яви зовнішньої змінної на гіт-хаб сторінці
+// ? intervalId буде undefined ;
 let intervalId = 0;
-// *
-startButtonUrl.addEventListener('click', () => {
-  if (isIntervalActive) {
-    return;
-  }
-  onStartButtonClick();
-});
 
-// *
-stopButtonUrl.addEventListener('click', onStopButtonBtn);
-function onStartButtonClick() {
+// ? // Подія і функція, що створює інтервал та додає кнопці атрибут disabled ;
+startButtonUrl.addEventListener('click', () => {
+  onStartBtnClick();
+});
+function onStartBtnClick() {
   intervalId = setInterval(() => {
     bodyUrl.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  isIntervalActive = true;
+  startButtonUrl.setAttribute('disabled', 'true');
 }
-function onStopButtonBtn() {
+
+// ? // Подія і функція, яка очищує інтервал та видаляє disabled ;
+stopButtonUrl.addEventListener('click', onStopBtnClick);
+function onStopBtnClick() {
   clearInterval(intervalId);
-  isIntervalActive = false;
+  startButtonUrl.removeAttribute('disabled');
 }
-// todo // Стилі кнопок
+
+// * // Стилі кнопок
 startButtonUrl.classList.add('body__start-btn');
 stopButtonUrl.classList.add('body__stop-btn');
-// ? // Отримання кольору
+// * // Отримання кольору
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)

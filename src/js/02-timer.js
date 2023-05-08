@@ -13,7 +13,7 @@ const urls = {
 };
 StartBtnBlock()
 // *
-
+let intervalId = 0;
 let selectedDate = 0;
 const options = {
   enableTime: true,
